@@ -19,7 +19,15 @@ My MVP should look like this
 
 Initial plan to reach the MVP
 
--
+# Iteration-1
+
+## 05/10/23
+
+installation of the environment for the twitter like project
+
+- npm install --> installation of npm
+- npm i axios --> installation of axios
+- npm i react-router-dom --> installation of react-router-dom
 
 # Description of the components
 
