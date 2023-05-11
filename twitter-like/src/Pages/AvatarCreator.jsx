@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react";
 const apiUrl = "https://api.dicebear.com/6.x/pixel-art/svg?seed=";
 //I need the API to store users information.
 //How to determine which file endpoint will refer to when a user is inputting thier informaiton?
@@ -8,6 +9,8 @@ function AvatarCreator() {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [description, setDescription] = useState("");
+
+  console.log(apiUrl + `${name}`);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -18,7 +21,21 @@ function AvatarCreator() {
       description: description,
     };
 
-    // axios.get(apiUrl + `${name}`, userObject);
+    axios
+      .get(apiUrl + `${name}`)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axios.push();
+
+    /*keep this one for later*/
+    // axios.get(apiUrl + `${name}`, userObject).then((response) => {
+    //     console.log(response)
+    // })
   }
 
   return (
