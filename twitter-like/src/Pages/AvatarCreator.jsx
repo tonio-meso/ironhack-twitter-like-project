@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react";
 const apiUrl = "https://api.dicebear.com/6.x/pixel-art/svg?seed=";
+const floApi = "https://ironrest.fly.dev/api/avatar-collection";
+import axios from "axios";
 //I need the API to store users information.
 //How to determine which file endpoint will refer to when a user is inputting thier informaiton?
 
@@ -14,23 +16,34 @@ function AvatarCreator() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    let image;
 
     const userObject = {
       name: name,
       lastName: lastName,
+      image: image,
       description: description,
     };
 
     axios
       .get(apiUrl + `${name}`)
       .then((response) => {
-        console.log(response);
+        // console.log(response.data);
+        image = response.data;
+        console.log(image);
       })
       .catch((error) => {
         console.log(error);
       });
 
-    axios.push();
+    axios
+      .post(floApi, userObject)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     /*keep this one for later*/
     // axios.get(apiUrl + `${name}`, userObject).then((response) => {
@@ -48,7 +61,7 @@ function AvatarCreator() {
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
-
+        {/* <img src="../../public/testPicture.svg" /> */}
         <label>Last Name:</label>
         <input
           type="text"
