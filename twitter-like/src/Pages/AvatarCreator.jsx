@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react";
 const apiUrl = "https://api.dicebear.com/6.x/pixel-art/svg?seed=";
+import axios from "axios";
 //I need the API to store users information.
 //How to determine which file endpoint will refer to when a user is inputting thier informaiton?
 
@@ -18,19 +19,22 @@ function AvatarCreator() {
     const userObject = {
       name: name,
       lastName: lastName,
+      image: image,
       description: description,
     };
+
+    let image;
 
     axios
       .get(apiUrl + `${name}`)
       .then((response) => {
-        console.log(response);
+        // console.log(response.data);
+        image = response.data;
+        console.log(image);
       })
       .catch((error) => {
         console.log(error);
       });
-
-    axios.push();
 
     /*keep this one for later*/
     // axios.get(apiUrl + `${name}`, userObject).then((response) => {
@@ -48,7 +52,7 @@ function AvatarCreator() {
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
-
+        {/* <img src="../../public/testPicture.svg" /> */}
         <label>Last Name:</label>
         <input
           type="text"
