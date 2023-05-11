@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 function Homepage() {
   return (
     <>
-      <div id="sidebar">
-        <h1>Like twitter but better</h1>
-        <div>
+      <header>Like Twitter but Better</header>
+      <div id="main">
+        <div id="left-container">
           <form id="search-form" role="search">
             <input
               id="q"
@@ -15,27 +15,39 @@ function Homepage() {
               type="search"
               name="q"
             />
-            <div id="search-spinner" aria-hidden hidden={true} />
-            <div className="sr-only" aria-live="polite"></div>
           </form>
+          <ul id="profile-list">
+            <li>
+              <div className="avatar"></div>
+              <span className="username">User1</span>
+            </li>
+            <li>
+              <div className="avatar"></div>
+              <span className="username">User2</span>
+            </li>
+            <li>
+              <div className="avatar"></div>
+              <span className="username">User3</span>
+            </li>
+            <li>
+              <div className="avatar"></div>
+              <span className="username">User4</span>
+            </li>
+          </ul>
           <form method="post">
             <Link to={"/avatar-creator"}>
               <button type="submit">New Avatar</button>
             </Link>
           </form>
         </div>
-        <nav>
-          <ul>
-            <li>
-              <a href={`/contacts/1`}>Your Profile 1</a>
-            </li>
-            <li>
-              <a href={`/contacts/2`}>Your Profil 2</a>
-            </li>
-          </ul>
-        </nav>
+        <div id="right-container">
+          <form>
+            <textarea placeholder="What's happening?" rows="3"></textarea>
+            <button type="submit">Tweet</button>
+          </form>
+        </div>
       </div>
-      <div id="detail"></div>
+      <footer>@Toheeb Antoine 2023</footer>
     </>
   );
 }
