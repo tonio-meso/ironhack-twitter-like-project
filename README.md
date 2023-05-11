@@ -1,6 +1,6 @@
 #################
 
-# Pthis title suck
+# Project #2 ironhack-twitgit ter-like-project
 
 ################
 
@@ -10,6 +10,7 @@ development of a web application (twitter like) using react.js
 
 - Iteration 1
 - first_branch created
+  naming convention between us
 - Iteration 2
 - Iteration 3
 - Iteration 4
