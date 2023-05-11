@@ -19,7 +19,7 @@ function Homepage() {
             <div className="sr-only" aria-live="polite"></div>
           </form>
           <form method="post">
-            <Link to="AvatarCreator">
+            <Link to={"/avatar-creator"}>
               <button type="submit">New Avatar</button>
             </Link>
           </form>
