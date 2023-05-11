@@ -9,7 +9,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/AvatorCreator" element={<AvatarCreator />} />
+        <Route path="/avatar-creator" element={<AvatarCreator />} />
         {/* <Route element={<Header />} /> */}
         {/* <Route path="/AvatarCreator" element={<AvatarCreator />} /> */}
       </Routes>
