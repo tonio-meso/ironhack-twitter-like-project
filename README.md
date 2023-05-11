@@ -31,6 +31,18 @@ installation of the environment for the twitter like project
 - npm i axios --> installation of axios
 - npm i react-router-dom --> installation of react-router-dom
 
+## Toheeb's Contribution
+
+-> T-v1:
+
+- Created "AvatarCreator page and DescriptionPage
+- Imported {useState} and created a variable holding the link to the dicebear API (https://www.dicebear.com/how-to-use/http-api)
+- Created 3 states "name, last name, description" to update what the user inputs into each field.
+- Set up "FORM" structure in HTML with each of input section for the user -> Name, Last Name and Description.
+- Finally I've partially created a "handleSubmit" function with the purpose of sending the information the user inputs.
+
+## Tonio's Contribution
+
 # Description of the components
 
 # Logic
