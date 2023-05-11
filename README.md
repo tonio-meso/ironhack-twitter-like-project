@@ -1,6 +1,6 @@
 #################
 
-# Project #2 ironhack-twitgit ter-like-project
+# Project #2 ironhack-twitter-project
 
 ################
 
@@ -16,7 +16,6 @@ development of a web application (twitter like) using react.js
   - implement use of <Outlet/>
   - lync to avatar detail --> creator page
   - lync to create your avatar page
-
 
 - Iteration 2
 - Iteration 3
