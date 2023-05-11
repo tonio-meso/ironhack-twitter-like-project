@@ -9,8 +9,15 @@
 development of a web application (twitter like) using react.js
 
 - Iteration 1
-- first_branch created
-  naming convention between us
+  home page, creator page, description page
+  build the navigation :
+  router skeleton in html of home page
+
+  - implement use of <Outlet/>
+  - lync to avatar detail --> creator page
+  - lync to create your avatar page
+
+
 - Iteration 2
 - Iteration 3
 - Iteration 4
