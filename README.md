@@ -37,6 +37,11 @@ installation of the environment for the twitter like project
 - npm i axios --> installation of axios
 - npm i react-router-dom --> installation of react-router-dom
 
+05/11/23
+
+- fix of the api error
+- new format for our submission form
+
 ## Toheeb's Contribution
 
 -> T-v1:

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import AvatarCreator from "./AvatarCreator";
 
 function Homepage() {
+  // instead of open a new page to create or new avatar lets try to use a dialog box for that
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  function closeDialog() {
+    setIsDialogOpen(false);
+  }
+
   return (
     <>
       <header>Like Twitter but Better</header>
@@ -34,11 +42,7 @@ function Homepage() {
               <span className="username">User4</span>
             </li>
           </ul>
-          <form method="post">
-            <Link to={"/avatar-creator"}>
-              <button type="submit">New Avatar</button>
-            </Link>
-          </form>
+          <button onClick={() => setIsDialogOpen(true)}>New Avatar</button>
         </div>
         <div id="right-container">
           <form>
@@ -48,6 +52,14 @@ function Homepage() {
         </div>
       </div>
       <footer>@Toheeb Antoine 2023</footer>
+      {/* Antoine : now with this part we know if the dialog is open or not */}
+      {isDialogOpen && (
+        <div className="dialog-overlay">
+          <div className="dialog">
+            <AvatarCreator onClose={closeDialog} />
+          </div>
+        </div>
+      )}
     </>
   );
 }
