@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DisplayAvatar from "../Components/DisplayAvatar";
 
 function Homepage() {
   return (
@@ -16,24 +17,7 @@ function Homepage() {
               name="q"
             />
           </form>
-          <ul id="profile-list">
-            <li>
-              <div className="avatar"></div>
-              <span className="username">User1</span>
-            </li>
-            <li>
-              <div className="avatar"></div>
-              <span className="username">User2</span>
-            </li>
-            <li>
-              <div className="avatar"></div>
-              <span className="username">User3</span>
-            </li>
-            <li>
-              <div className="avatar"></div>
-              <span className="username">User4</span>
-            </li>
-          </ul>
+          <div>{<DisplayAvatar />}</div>
           <form method="post">
             <Link to={"/avatar-creator"}>
               <button type="submit">New Avatar</button>
@@ -41,7 +25,7 @@ function Homepage() {
           </form>
           <form method="post">
             <Link to={"/description-page"}>
-              <button type="submit">New Avatar</button>
+              <button type="submit">Avatar detail</button>
             </Link>
           </form>
         </div>
