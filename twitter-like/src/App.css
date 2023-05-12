@@ -13,12 +13,12 @@ header {
 }
 
 #main {
-  max-width: 1200px;
+  max-width: 850px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-template-rows: 1fr;
   grid-gap: 1rem;
-  margin: 1rem;
+  margin: auto;
 }
 
 .container {
