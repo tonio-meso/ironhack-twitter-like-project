@@ -26,12 +26,6 @@ header {
   flex-wrap: wrap;
 }
 
-.profiles-container {
-  width: 30%;
-  height: auto;
-  padding: 10px;
-}
-
 .tweet-container {
   width: 70%;
   height: auto;
@@ -59,17 +53,6 @@ header {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-}
-
-#profile-list {
-  list-style: none;
-  padding: 0;
-}
-
-#profile-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
 }
 
 .avatar {
@@ -111,4 +94,48 @@ button {
 
 button:hover {
   background-color: #0c90e0;
+}
+
+/* css for the displaying avatar */
+
+#avatar-container {
+  height: 400px; /* set the height to the desired value */
+  overflow-y: scroll;
+}
+
+.avatar-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.avatar-item .avatar {
+  margin-right: 16px;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatar-item .avatar img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.avatar-item .username {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.avatar-item .lastname {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.avatar-item .description {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
 }
