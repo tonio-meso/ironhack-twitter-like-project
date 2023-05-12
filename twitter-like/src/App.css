@@ -32,15 +32,6 @@ header {
   padding: 10px;
 }
 
-@media screen and (max-width: 768px) {
-  .profiles-container {
-    width: 100%;
-  }
-  .tweet-container {
-    width: 100%;
-  }
-}
-
 #left-container {
   background-color: #fff;
   padding: 1rem;
@@ -94,6 +85,15 @@ button {
 
 button:hover {
   background-color: #0c90e0;
+}
+
+/* css for the delete button */
+.delete-button {
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 /* css for the displaying avatar */
