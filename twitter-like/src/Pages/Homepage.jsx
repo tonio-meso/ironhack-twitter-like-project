@@ -24,7 +24,7 @@ function Homepage() {
             </Link>
           </form>
           <form method="post">
-            <Link to={"/description-page"}>
+            <Link to={"/description-page/:id"}>
               <button type="submit">Avatar detail</button>
             </Link>
           </form>

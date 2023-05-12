@@ -28,20 +28,25 @@ function DescriptionPage() {
   }, []);
 
   const userId = singleUser.filter((user) => {
-    return beer._id === params._id;
+    return user._id === params._id;
   })[0];
 
   return (
     <>
-      <div>Your Profile</div>
-      {userId && (
-        <>
-          <img src={userId.image} />
-          <h3>{userId.name}</h3>
-          <h3>{userId.lastName}</h3>
-          <h3>{userId.description}</h3>
-        </>
-      )}
+      <div>
+        <h1>Your Profile</h1>
+      </div>
+      <div>
+        {userId && (
+          <div>
+            <img src={userId.image} />
+            <h3>{userId.name}</h3>
+            <h3>{userId.lastName}</h3>
+            <h3>{userId.description}</h3>
+          </div>
+        )}
+      </div>
+      <Link to={"/"}>Back</Link>
     </>
   );
 }

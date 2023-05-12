@@ -90,6 +90,8 @@ function AvatarCreator() {
 
         <button type="submit">Send</button>
       </form>
+      {/* <button type="submit" to="">Go Back</button> */}
+      <Link to={"/"}>Back</Link>
     </div>
   );
 }
