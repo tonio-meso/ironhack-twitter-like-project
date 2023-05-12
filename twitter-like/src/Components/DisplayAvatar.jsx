@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 
 const apiUrl = "https://ironrest.fly.dev/api/avatar-collection";
 
+const apiUrlDelete = "https://ironrest.fly.dev/api/avatar-collection";
+
+// Get your Avatar
 function GetAvatar() {
   // i start to create a useState Hook to store the data
   const [data, setData] = useState("");
@@ -23,6 +26,18 @@ function GetAvatar() {
   useEffect(() => {
     getAllData();
   }, []);
+
+  // Delete avatar and update after
+  function handleDelete(_id) {
+    axios
+      .delete(`${apiUrlDelete}/${_id}`)
+      .then(() => {
+        setData((prevData) => prevData.filter((item) => item._id !== _id));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   return (
     <>
       <div id="avatar-container">
@@ -44,6 +59,12 @@ function GetAvatar() {
                     <span className="lastname">{item.lastName}</span>
                     <div className="description">{item.description}</div>
                   </Link>
+                  <button
+                    className="delete-button"
+                    onClick={() => handleDelete(item._id)}
+                  >
+                    Delete
+                  </button>
                 </li>
               );
             })}

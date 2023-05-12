@@ -23,11 +23,6 @@ function Homepage() {
               <button type="submit">New Avatar</button>
             </Link>
           </form>
-          <form method="post">
-            <Link to={"/description-page/:id"}>
-              <button type="submit">Avatar detail</button>
-            </Link>
-          </form>
         </div>
         <div id="right-container">
           <form>
