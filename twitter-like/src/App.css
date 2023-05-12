@@ -87,6 +87,21 @@ button:hover {
   background-color: #0c90e0;
 }
 
+#wrapping-message-box {
+  display: flex;
+  border: 1rem;
+  margin: auto;
+  height: 400px;
+  border: 2px solid rgb(164, 157, 157);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+}
+
+/* #wrapping-input-box {
+  margin-top: 400px;
+} */
+
 /* css for the delete button */
 .delete-button {
   background-color: transparent;

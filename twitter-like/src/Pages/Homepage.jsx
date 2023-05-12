@@ -25,10 +25,13 @@ function Homepage() {
           </form>
         </div>
         <div id="right-container">
-          <form>
-            <textarea placeholder="What's happening?" rows="3"></textarea>
-            <button type="submit">Tweet</button>
-          </form>
+          <div id="wrapping-message-box"></div>
+          <div id="wrapping-input-box">
+            <form>
+              <textarea placeholder="What's happening?" rows="3"></textarea>
+              <button type="submit">Tweet</button>
+            </form>
+          </div>
         </div>
       </div>
       <footer>@Toheeb Antoine 2023</footer>
