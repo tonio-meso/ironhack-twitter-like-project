@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, Link } from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 const apiUrl = "https://api.dicebear.com/6.x/pixel-art/svg?seed=";
 // const apiUrl = "https://api.dicebear.com/6.x/pixel-art/jpg?seed=";
 // const apiUrl = "https://api.dicebear.com/6.x/pixel-art/png?seed=";
@@ -10,6 +11,7 @@ import axios from "axios";
 //How to determine which file endpoint will refer to when a user is inputting thier informaiton?
 
 function AvatarCreator() {
+  const navigateTo = useNavigate();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [image, setImage] = useState("");
@@ -20,6 +22,7 @@ function AvatarCreator() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    navigateTo(-1);
     // let image;
 
     axios
