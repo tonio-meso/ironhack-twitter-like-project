@@ -13,6 +13,8 @@ function AvatarCreator() {
   const navigateTo = useNavigate();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [nickName, setNickName] = useState("");
   const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
@@ -20,6 +22,7 @@ function AvatarCreator() {
   const [description, setDescription] = useState("");
   const [accessories, setAccessories] = useState("");
   const [face, setFace] = useState("");
+  const [hair, setHair] = useState("");
 
   /* I thought I needed a useEffect but I dont. My code is working without it.*/
   // useEffect(() => {
@@ -52,7 +55,7 @@ function AvatarCreator() {
 
     /*What I have below triggers a "status 400".*/
     axios
-      .get(apiUrl + `${nickName}` + `${face}` + `${accessories}`)
+      .get(apiUrl + `${nickName}` + `${face}` + `${hair}` + `${accessories}`)
       .then((response) => {
         setImage(response.data);
         // console.log(response.data);
@@ -67,7 +70,9 @@ function AvatarCreator() {
       name: name,
       lastName: lastName,
       nickName: nickName,
-      image: `https://api.dicebear.com/6.x/open-peeps/svg?seed=${nickName}${face}${accessories}`,
+      email: email,
+      password: password,
+      image: `https://api.dicebear.com/6.x/open-peeps/svg?seed=${nickName}${face}${hair}${accessories}`,
       message: message,
       description: description,
     };
@@ -110,12 +115,30 @@ function AvatarCreator() {
             setNickName(event.target.value);
           }}
         />
+        <label>Email</label>
+        <input
+          type="text"
+          value={email}
+          onChange={(event) => {
+            setEmail(event.target.value);
+          }}
+        />
+
+        <label>Password</label>
+        <input
+          type="text"
+          value={password}
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+        />
         <img
           className="avatar-img"
           src={
             "https://api.dicebear.com/6.x/open-peeps/svg?seed=" +
             `${nickName}` +
             `${face}` +
+            `${hair}` +
             `${accessories}`
           }
           alt="avatar"
@@ -200,6 +223,54 @@ function AvatarCreator() {
             <option value="suspicious">Looking Sus</option>
             <option value="tired">Tired</option>
             <option value="veryAngry">Not having it</option>
+          </select>
+        </label>
+
+        <label>
+          Hair:
+          <select
+            name="hairList"
+            defaultValue={hair}
+            onChange={(event) => {
+              if (event.target.value === "") {
+                setHair("");
+              } else {
+                setHair("&head=" + event.target.value);
+              }
+            }}
+          >
+            <option value="">None</option>
+            <option value="afro">Afro</option>
+            <option value="bangs">Bangs</option>
+            <option value="bangs2">Bangs 2</option>
+            <option value="bantuKnots">Bantu Knots</option>
+            <option value="bear">Bear</option>
+            <option value="bun">Bun</option>
+            <option value="bun2">Bun 2</option>
+            <option value="buns">Buns</option>
+            <option value="cornrows">Cornrows</option>
+            <option value="cornrows2">Cornrows 2</option>
+            <option value="dreads1">Dreads</option>
+            <option value="dreads2">Dreads 2</option>
+            <option value="flatTop">Flat Top</option>
+            <option value="flatTopLong">Flat Top 2</option>
+            <option value="grayBun">Gray Bun</option>
+            <option value="grayMedium">Gray Medium</option>
+            <option value="grayShort">Gray Short</option>
+            <option value="hatBeanie">Beanie</option>
+            <option value="hatHip">Stylish Cap</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
           </select>
         </label>
 
