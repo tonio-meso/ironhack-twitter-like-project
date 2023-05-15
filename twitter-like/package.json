@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "delete-tweets": "node AdminDeleteTweet.js",
+    "delete-avatars": "node AdminDeleteAvatarCollection.js"
   },
   "dependencies": {
     "axios": "^1.4.0",
