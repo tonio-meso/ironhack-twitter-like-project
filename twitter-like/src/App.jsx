@@ -11,9 +11,6 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/avatar-creator" element={<AvatarCreator />} />
         <Route path="/description-page/:_id" element={<DescriptionPage />} />
-        {/* <Route path="/description-page" element={<DescriptionPage />} /> */}
-        {/* <Route element={<Header />} /> */}
-        {/* <Route path="/AvatarCreator" element={<AvatarCreator />} /> */}
       </Routes>
     </>
   );
