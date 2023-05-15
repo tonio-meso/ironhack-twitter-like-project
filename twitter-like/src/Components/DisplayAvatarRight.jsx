@@ -24,17 +24,6 @@ function DisplayAvatarRight() {
     getAllData();
   }, []);
 
-  function handleDelete(_id) {
-    axios
-      .delete(`${apiUrlDelete}/${_id}`)
-      .then(() => {
-        setData((prevData) => prevData.filter((item) => item._id !== _id));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
   return (
     <>
       <div id="avatar-container">
@@ -43,10 +32,6 @@ function DisplayAvatarRight() {
             {data.map((item) => {
               return (
                 <li key={item._id} className="avatar-item">
-                  {/* <Link
-                    to={`/description-page/${item._id}`}
-                    className="avatar-link"
-                  > */}
                   {item.message && (
                     <div className="avatar">
                       <img src={item.image} alt="avatar" />
@@ -59,15 +44,6 @@ function DisplayAvatarRight() {
                       <div className="description">{item.message}</div>
                     </div>
                   )}
-                  <button
-                    className="delete-button"
-                    onClick={() => handleDelete(item._id)}
-                  >
-                    Delete
-                  </button>
-
-                  {/* <div className="description">{item.description}</div> */}
-                  {/* </Link> */}
                 </li>
               );
             })}
