@@ -130,6 +130,7 @@ function AvatarCreator() {
           value={password}
           onChange={(event) => {
             setPassword(event.target.value);
+            ``;
           }}
         />
         <img
