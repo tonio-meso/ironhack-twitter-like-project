@@ -2,11 +2,34 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DisplayAvatar from "../Components/DisplayAvatar";
 import DisplayAvatarRight from "../Components/DisplayAvatarRight";
+import { useState } from "react";
+import LoginPage from "./LoginPage";
 
 function Homepage() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [tweetText, setTweetText] = useState("");
+
+  function closeDialog() {
+    setIsDialogOpen(false);
+  }
+
+  function handleLogin() {
+    setIsDialogOpen(true);
+  }
+
   return (
     <>
-      <header>Like Twitter but Better</header>
+      <header>
+        Like Twitter but Better
+        <div>
+          <button onClick={handleLogin}>
+            <span role="img" aria-label="Login">
+              🚪
+            </span>
+            <span>Login</span>
+          </button>
+        </div>
+      </header>
       <div id="main">
         <div id="left-container">
           <form id="search-form" role="search">
@@ -38,6 +61,8 @@ function Homepage() {
         </div>
       </div>
       <footer>@Toheeb Antoine 2023</footer>
+      {/* Antoine : now with this part we know if the dialog is open or not */}
+      {isDialogOpen && <LoginPage onClose={closeDialog} />}
     </>
   );
 }
