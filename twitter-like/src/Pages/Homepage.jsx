@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DisplayAvatar from "../Components/DisplayAvatar";
+import DisplayAvatarRight from "../Components/DisplayAvatarRight";
 
 function Homepage() {
   return (
@@ -25,7 +26,9 @@ function Homepage() {
           </form>
         </div>
         <div id="right-container">
-          <div id="wrapping-message-box"></div>
+          <div id="wrapping-message-box">
+            <div>{<DisplayAvatarRight />}</div>
+          </div>
           <div id="wrapping-input-box">
             <form>
               <textarea placeholder="What's happening?" rows="3"></textarea>
