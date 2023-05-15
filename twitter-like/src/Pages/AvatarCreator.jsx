@@ -6,8 +6,6 @@ const apiUrl = "https://api.dicebear.com/6.x/open-peeps/svg?seed=";
 const floApi = "https://ironrest.fly.dev/api/avatar-collection";
 
 import axios from "axios";
-//I need the API to store users information.
-//How to determine which file endpoint will refer to when a user is inputting thier informaiton?
 
 function AvatarCreator() {
   const navigateTo = useNavigate();
@@ -18,7 +16,7 @@ function AvatarCreator() {
   const [nickName, setNickName] = useState("");
   const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
-  //i might try to input an image directly and use this as a placeholder
+
   const [description, setDescription] = useState("");
   const [accessories, setAccessories] = useState("");
   const [face, setFace] = useState("");
@@ -26,36 +24,11 @@ function AvatarCreator() {
   const [clothColor, setClothColor] = useState("");
   const [hair, setHair] = useState("");
 
-  /* I thought I needed a useEffect but I dont. My code is working without it.*/
-  // useEffect(() => {
-  //   console.log("USE EFFECT");
-  //   console.log(accessories);
-
-  //   axios
-  //     .get(apiUrl + `${nickName}` + `${accessories}`)
-  //     .then((response) => {
-  //       setImage(response.data);
-  //       // console.log(response.data);
-  //       // image = response.data;
-  //       // console.log(image);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, [accessories]);
-
   function handleSubmit(event) {
     event.preventDefault();
     // navigateTo(-1);
     // let image;
 
-    /* 
-  - wrapping my axios get request here solves the issue "status 400" when a user switches between options. 
-  - I still have the issue when a user chooses another option it doesn't show. 
-  - I still get a "status 400" when i revert select none after choosing other options. 
-  */
-
-    /*What I have below triggers a "status 400".*/
     axios
       .get(
         apiUrl +
@@ -68,9 +41,6 @@ function AvatarCreator() {
       )
       .then((response) => {
         setImage(response.data);
-        // console.log(response.data);
-        // image = response.data;
-        // console.log(image);
       })
       .catch((error) => {
         console.log(error);
@@ -89,16 +59,11 @@ function AvatarCreator() {
 
     axios
       .post(floApi, userObject)
-      .then((response) => {
-        // console.log(response);
-      })
+      .then((response) => {})
       .catch((error) => {
         console.log(error);
       });
   }
-
-  // console.log(accessories);
-  // console.log(apiUrl + `${nickName}` + `${accessories}`);
 
   return (
     <div>
@@ -110,7 +75,6 @@ function AvatarCreator() {
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
-        {/* since im currently not able to figure out why i cant post the stored image to flo's api i had to figure out another way to get a random image. I think what I wrote below is a good start. Still thinking on how to make one of the randomized image belong to a specific user.  */}
         <label>Last Name:</label>
         <input
           type="text"
@@ -156,17 +120,12 @@ function AvatarCreator() {
           }
           alt="avatar"
         />
-        <label>
+        {/* <label>
           Accessories:
           <select
             name="accessoryList"
             defaultValue={accessories}
             onChange={(event) => {
-              /* I had to read the documentation and i noticed sometimes the accessories would pop up, so adjusting the probability to 100 ensures when a user selects an accessory it'll show on the avatar.*/
-
-              /* The status 400 issue came about due to my if statement below. I had if(!accessories)  then it'll run something. Problem is that when a user chooses something the glasses state changes so when when I would try and choose another pair of glasses it would come up empty and immediately resort to the else statement which was "". */
-
-              /*If you cant explain the code then it may cause you some issue later. Try and make sense of each code you write so I wouldn't get caught off guard when something isnt't working */
 
               if (event.target.value === "") {
                 setAccessories("");
@@ -175,14 +134,7 @@ function AvatarCreator() {
                   "&accessoriesProbability=100&accessories=" +
                     event.target.value
                 );
-
-                //   if (!accessories) {
-                //     setAccessories(event.target.value);
-                //   } else {
-                //     setAccessories("");
-                //   }
               }
-              /*I dont understand why when a user chooses between each option listed some will show and others wouldnt?  */
             }}
           >
             <option value="">None</option>
@@ -304,29 +256,50 @@ function AvatarCreator() {
           </select>
         </label>
 
-        <label>Cloth color</label>
-        <select
-          name="clothList"
-          defaultValue={clothColor}
-          onChange={(event) => {
-            if (event.target.value === "") {
-              setClothColor("");
-            } else {
-              setClothColor("&clothingColor=" + event.target.value);
-            }
-          }}
-        >
-          <option value="">None</option>
-          <option value="87a7df">Dark Blue</option>
-          <option value="9ddadb">Light Blue</option>
-          <option value="78e185">Green</option>
-          <option value="e279c7">Pink</option>
-          <option value="e78276">Orange</option>
-          <option value="fdea6b">Yellow</option>
-        </select>
+        <label>
+          Cloth color
+          <select
+            name="clothList"
+            defaultValue={clothColor}
+            onChange={(event) => {
+              if (event.target.value === "") {
+                setClothColor("");
+              } else {
+                setClothColor("&clothingColor=" + event.target.value);
+              }
+            }}
+          >
+            <option value="">None</option>
+            <option value="87a7df">Dark Blue</option>
+            <option value="9ddadb">Light Blue</option>
+            <option value="78e185">Green</option>
+            <option value="e279c7">Pink</option>
+            <option value="e78276">Orange</option>
+            <option value="fdea6b">Yellow</option>
+          </select>
+        </label>
 
-        <label>Skin Color</label>
-
+        <label>
+          Skin Color
+          <select
+            name="skinList"
+            defaultValue={skin}
+            onChange={(event) => {
+              if (event.target.value === "") {
+                setSkin("");
+              } else {
+                setSkin("&skinColor=" + event.target.value);
+              }
+            }}
+          >
+            <option value="">None</option>
+            <option value="694d3d">Skin type 1</option>
+            <option value="ae5d29">Skin type 2</option>
+            <option value="d08b5b">Skin type 3</option>
+            <option value="edb98a">Skin type 4</option>
+            <option value="ffdbb4">Skin type 5</option>
+          </select>
+        </label>
         <label>Message:</label>
         <input
           type="text"
@@ -334,7 +307,7 @@ function AvatarCreator() {
           onChange={(event) => {
             setMessage(event.target.value);
           }}
-        />
+        /> */}
         <label>Description:</label>
         <textarea
           type="textbox"
@@ -343,7 +316,6 @@ function AvatarCreator() {
         />
         <button type="submit">Send</button>
       </form>
-      {/* <button type="submit" to="">Go Back</button> */}
       <Link to={"/"}>Back</Link>
     </div>
   );
@@ -351,17 +323,16 @@ function AvatarCreator() {
 
 export default AvatarCreator;
 
-/*keep this one for later*/
-// axios.get(apiUrl + `${name}`, userObject).then((response) => {
-//     console.log(response)
-// })
+/* The status 400 issue came about due to my if statement below. I had if(!accessories)  then it'll run something. Problem is that when a user chooses something the glasses state changes so when when I would try and choose another pair of glasses it would come up empty and immediately resort to the else statement which was "". */
 
-//   function accessoryHandler(event) {
-//     if (accessories === "") {
-//       setAccessories("");
-//     } else {
-//       setAccessories("&accessories=" + event.target.value);
-//     }
+/*If you cant explain the code then it may cause you some issue later. Try and make sense of each code you write so I wouldn't get caught off guard when something isnt't working */
+
+//   if (event.target.value === "") {
+//     setAccessories("");
+//   } else {
+//     setAccessories(
+//       "&accessoriesProbability=100&accessories=" +
+//         event.target.value
+//     );
 //   }
-
-//   console.log(setAccessories);
+// }}
