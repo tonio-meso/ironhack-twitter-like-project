@@ -22,6 +22,8 @@ function AvatarCreator() {
   const [description, setDescription] = useState("");
   const [accessories, setAccessories] = useState("");
   const [face, setFace] = useState("");
+  const [skin, setSkin] = useState("");
+  const [clothColor, setClothColor] = useState("");
   const [hair, setHair] = useState("");
 
   /* I thought I needed a useEffect but I dont. My code is working without it.*/
@@ -55,7 +57,15 @@ function AvatarCreator() {
 
     /*What I have below triggers a "status 400".*/
     axios
-      .get(apiUrl + `${nickName}` + `${face}` + `${hair}` + `${accessories}`)
+      .get(
+        apiUrl +
+          `${nickName}` +
+          `${face}` +
+          `${hair}` +
+          `${accessories}` +
+          `${clothColor}` +
+          `${skin}`
+      )
       .then((response) => {
         setImage(response.data);
         // console.log(response.data);
@@ -72,7 +82,7 @@ function AvatarCreator() {
       nickName: nickName,
       email: email,
       password: password,
-      image: `https://api.dicebear.com/6.x/open-peeps/svg?seed=${nickName}${face}${hair}${accessories}`,
+      image: `https://api.dicebear.com/6.x/open-peeps/svg?seed=${nickName}${face}${hair}${accessories}${clothColor}${skin}`,
       message: message,
       description: description,
     };
@@ -139,7 +149,9 @@ function AvatarCreator() {
             `${nickName}` +
             `${face}` +
             `${hair}` +
-            `${accessories}`
+            `${accessories}` +
+            `${clothColor}` +
+            `${skin}`
           }
           alt="avatar"
         />
@@ -258,21 +270,61 @@ function AvatarCreator() {
             <option value="grayMedium">Gray Medium</option>
             <option value="grayShort">Gray Short</option>
             <option value="hatBeanie">Beanie</option>
-            <option value="hatHip">Stylish Cap</option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+            <option value="hatHip">Stylish Hat</option>
+            <option value="hijab">Hijab</option>
+            <option value="long">Long Hair</option>
+            <option value="longAfro">Large Fro</option>
+            <option value="longBangs">Long Bangs</option>
+            <option value="longCurly">Curly</option>
+            <option value="medium1">Medium 1</option>
+            <option value="medium2">Medium 2</option>
+            <option value="medium3">Medium 3</option>
+            <option value="mediumBangs">Medium Bangs</option>
+            <option value="mediumBangs2">Medium Bangs 2</option>
+            <option value="mediumBangs3">Medium Bangs 3</option>
+            <option value="mediumStraight">Medium Straight</option>
+            <option value="mohawk">Mohawk</option>
+            <option value="mohawk2">Mohawk 2</option>
+            <option value="noHair1">Bald</option>
+            <option value="noHair2">No hair</option>
+            <option value="noHair3">No hair 2</option>
+            <option value="pomp">Pomp</option>
+            <option value="shaved1">Side shave</option>
+            <option value="shaved2">Side shave 2</option>
+            <option value="shaved3">Side shave 3</option>
+            <option value="short1">Short Hair</option>
+            <option value="short2">Short Hair 2</option>
+            <option value="short3">Short Hair 3</option>
+            <option value="short4">Short Hair 4</option>
+            <option value="short5">Short Hair 5</option>
+            <option value="turban">Turban</option>
+            <option value="twists">Twists</option>
+            <option value="twists2">Twists 2</option>
           </select>
         </label>
+
+        <label>Cloth color</label>
+        <select
+          name="clothList"
+          defaultValue={clothColor}
+          onChange={(event) => {
+            if (event.target.value === "") {
+              setClothColor("");
+            } else {
+              setClothColor("&clothingColor=" + event.target.value);
+            }
+          }}
+        >
+          <option value="">None</option>
+          <option value="87a7df">Dark Blue</option>
+          <option value="9ddadb">Light Blue</option>
+          <option value="78e185">Green</option>
+          <option value="e279c7">Pink</option>
+          <option value="e78276">Orange</option>
+          <option value="fdea6b">Yellow</option>
+        </select>
+
+        <label>Skin Color</label>
 
         <label>Message:</label>
         <input
