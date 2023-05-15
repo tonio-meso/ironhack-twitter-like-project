@@ -32,13 +32,7 @@ header {
   padding: 10px;
 }
 
-#left-container {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-}
-
+#left-container,
 #right-container {
   background-color: #fff;
   padding: 1rem;
@@ -67,7 +61,7 @@ textarea {
   font-size: 1rem;
   padding: 0.5rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #c61f1f;
   resize: none;
   margin-bottom: 0.5rem;
 }
@@ -95,7 +89,7 @@ button:hover {
   border: 2px solid rgb(164, 157, 157);
   border-radius: 10px;
   margin-bottom: 10px;
-  overflow-y: scroll;
+  width: 380px;
 }
 
 /* #wrapping-input-box {
@@ -153,4 +147,20 @@ button:hover {
   margin-top: 8px;
   font-size: 14px;
   color: #666;
+}
+
+#super-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#tweet-container {
+  width: 70%;
+  height: auto;
+}
+
+#tweet-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
 }

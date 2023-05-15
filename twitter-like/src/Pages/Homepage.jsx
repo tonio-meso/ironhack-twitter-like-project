@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DisplayAvatar from "../Components/DisplayAvatar";
-import DisplayAvatarRight from "../Components/DisplayAvatarRight";
+import Tweeting from "../Components/Tweeting";
 import { useState } from "react";
 import LoginPage from "./LoginPage";
 
 function Homepage() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [tweetText, setTweetText] = useState("");
 
   function closeDialog() {
     setIsDialogOpen(false);
@@ -48,17 +47,7 @@ function Homepage() {
             </Link>
           </form>
         </div>
-        <div id="right-container">
-          <div id="wrapping-message-box">
-            <div>{<DisplayAvatarRight />}</div>
-          </div>
-          <div id="wrapping-input-box">
-            <form>
-              <textarea placeholder="What's happening?" rows="3"></textarea>
-              <button type="submit">Tweet</button>
-            </form>
-          </div>
-        </div>
+        <div id="right-container">{<Tweeting />}</div>
       </div>
       <footer>@Toheeb Antoine 2023</footer>
       {/* Antoine : now with this part we know if the dialog is open or not */}
