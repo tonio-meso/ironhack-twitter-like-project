@@ -39,6 +39,10 @@ header {
   margin: auto;
 }
 
+#right-container {
+  height: 450px;
+}
+
 #left-container {
   margin-bottom: 1rem;
 }
@@ -46,7 +50,8 @@ header {
 /* for the search bar */
 form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* where we write in the prompt */
@@ -78,6 +83,7 @@ button:hover {
   height: 400px;
   width: 350px;
   overflow-y: scroll;
+  margin-bottom: 1rem;
 }
 
 .avatar {
@@ -137,17 +143,22 @@ button:hover {
 }
 
 .loginPage {
-  margin: 33%;
+  margin: 28%;
   position: absolute;
   background-color: #1da1f2;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 1rem;
+}
+
+.prompt {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .detail-log {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
 }
 
 footer {
