@@ -16,11 +16,11 @@ function GetAvatar() {
     axios
       .get(apiUrl)
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
         setData(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
   };
   useEffect(() => {
@@ -35,7 +35,7 @@ function GetAvatar() {
         setData((prevData) => prevData.filter((item) => item._id !== _id));
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
   }
   return (
@@ -55,17 +55,17 @@ function GetAvatar() {
                         <img src={item.image} alt="avatar" />
                       </div>
                     )}
-                    <span className="username">{item.nickName}</span>
-                    {/* <span className="username">{item.name}</span>
-                    <span className="lastname">{item.lastName}</span> */}
-                    {/* <div className="description">{item.description}</div> */}
+                    <div className="nickname">{item.nickName}</div>
+                    {/* <span className="username">{item.name}</span> */}
+                    {/* <span className="lastname">{item.lastName}</span> */}
+                    <div className="description">{item.description}</div>
                   </Link>
-                  <button
+                  {/* <button
                     className="delete-button"
                     onClick={() => handleDelete(item._id)}
                   >
                     Delete
-                  </button>
+                  </button> */}
                 </li>
               );
             })}

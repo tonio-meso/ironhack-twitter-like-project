@@ -4,7 +4,7 @@
   /* min-height: 100vh; */
 }
 
-header {
+.homepage-header {
   display: flex;
   flex-direction: row;
   width: 350px;
@@ -40,7 +40,7 @@ header {
 }
 
 #right-container {
-  height: 450px;
+  height: 511px;
 }
 
 #left-container {
@@ -50,8 +50,9 @@ header {
 /* for the search bar */
 form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 /* where we write in the prompt */
@@ -86,6 +87,12 @@ button:hover {
   margin-bottom: 1rem;
 }
 
+#avatar-list {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
 .avatar {
   width: 40px;
   height: 40px;
@@ -94,10 +101,15 @@ button:hover {
   margin-right: 1rem;
 }
 
+/* .avatar-link {
+  display: flex;
+  flex-direction: row;
+} */
+
 .avatar-item {
   display: flex;
   align-items: center;
-  padding: 8px;
+  padding: 2px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -137,16 +149,17 @@ button:hover {
 }
 
 #super-wrapper {
-  height: 400px;
+  height: 470px;
   width: 350px;
   overflow-y: scroll;
 }
 
 .loginPage {
-  margin: 28%;
-  position: absolute;
+  margin: 22%;
+  position: fixed;
   background-color: #1da1f2;
   padding: 1rem;
+  border: 1px solid black;
   border-radius: 1rem;
 }
 
@@ -159,6 +172,7 @@ button:hover {
 .detail-log {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 footer {
@@ -167,7 +181,7 @@ footer {
 }
 
 @media (width > 800px) {
-  header {
+  .homepage-header {
     width: -webkit-fill-available;
   }
 
@@ -179,5 +193,21 @@ footer {
   #left-container {
     padding: 1rem;
     margin-right: 1rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .loginPage {
+    margin: 22%;
+    position: fixed;
+    background-color: #1da1f2;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
   }
 }
