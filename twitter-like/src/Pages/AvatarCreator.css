@@ -1,7 +1,11 @@
-header {
+.header-avatar {
   height: 100px;
   margin-bottom: 20px;
   padding-bottom: 30px;
+  background-color: #1da1f2;
+  color: #fff;
+  display: flex;
+  height: 100%;
 }
 
 .body {

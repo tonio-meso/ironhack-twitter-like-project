@@ -92,16 +92,16 @@ function DescriptionPage() {
 
   return (
     <div>
-      <div className="header-1">
+      <div className="description-header">
         <h1>Your Profile</h1>
       </div>
       <div className="Tub">
         {userId && (
-          <div>
-            <h3>{userId.name}</h3>
-            <h3>{userId.lastName}</h3>
-            <h3>{userId.nickName}</h3>
-            <h3>{userId.description}</h3>
+          <div className="tub-1">
+            <h3>First Name: {userId.name}</h3>
+            <h3>Last Name: {userId.lastName}</h3>
+            <h3>Username: {userId.nickName}</h3>
+            <h3>User Description: {userId.description}</h3>
             <h3>{userId.message}</h3>
             <img
               className="avatar-img2"
@@ -116,8 +116,9 @@ function DescriptionPage() {
             />
           </div>
         )}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="description-form">
           {/* ----------------------------------------------------------- */}
+
           <label>
             Accessories:
             <select
@@ -307,7 +308,9 @@ function DescriptionPage() {
               setMessage(event.target.value);
             }}
           /> */}
-          <button type="submit">Send</button>
+          <div>
+            <button type="submit">Send</button>
+          </div>
         </form>
       </div>
       <Link to={"/"}>Back</Link>

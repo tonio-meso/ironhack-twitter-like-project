@@ -67,10 +67,10 @@ function AvatarCreator() {
 
   return (
     <div>
-      <header>
+      <div className="header-avatar">
         <h2>Create Your Avatar</h2>
-      </header>
-      <div className="body">
+      </div>
+      <div className="creator-body">
         <form id="container1" onSubmit={handleSubmit}>
           <div className="box-1">
             <h2>Please Fill out the form below: </h2>
