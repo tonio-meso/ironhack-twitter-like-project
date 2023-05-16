@@ -50,7 +50,7 @@ function LoginPage({ onClose }) {
   }
 
   return (
-    <div>
+    <div className="detail-log">
       <h1>Login</h1>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
