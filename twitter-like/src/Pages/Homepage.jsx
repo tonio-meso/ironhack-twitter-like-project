@@ -20,14 +20,9 @@ function Homepage() {
     <>
       <header>
         Like Twitter but Better
-        <div>
-          <button onClick={handleLogin}>
-            <span role="img" aria-label="Login">
-              🚪
-            </span>
-            <span>Login</span>
-          </button>
-        </div>
+        <button id="login" onClick={handleLogin}>
+          Login
+        </button>
       </header>
       <div id="main">
         <div id="left-container">
@@ -40,7 +35,7 @@ function Homepage() {
               name="q"
             />
           </form>
-          <div>{<DisplayAvatar />}</div>
+          {<DisplayAvatar />}
           <form method="post">
             <Link to={"/avatar-creator"}>
               <button type="submit">New Avatar</button>
@@ -51,7 +46,11 @@ function Homepage() {
       </div>
       <footer>@Toheeb Antoine 2023</footer>
       {/* Antoine : now with this part we know if the dialog is open or not */}
-      {isDialogOpen && <LoginPage onClose={closeDialog} />}
+      {isDialogOpen && (
+        <div className="loginPage">
+          <LoginPage onClose={closeDialog} />
+        </div>
+      )}
     </>
   );
 }
