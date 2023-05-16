@@ -93,7 +93,7 @@ function DescriptionPage() {
   return (
     <div>
       <div className="description-header">
-        <h1>Your Profile</h1>
+        <h2>Your Profile</h2>
       </div>
       <div className="Tub">
         {userId && (

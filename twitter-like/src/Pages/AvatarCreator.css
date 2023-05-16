@@ -13,8 +13,8 @@
   margin: 0 auto;
 }
 
-h2 {
-  margin-bottom: 100px;
+.header-avatar h2 {
+  margin: 25px 0px 0px 10px;
 }
 
 .box-1 {
@@ -22,6 +22,13 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
+
+/* .innerFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
 .box-1 h2 {
   margin: 5px 0;
 }
@@ -61,4 +68,12 @@ img {
   height: 30px;
   border-radius: 5px;
   border-style: none;
+}
+
+@media (max-width: 459px) {
+  .innerFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
