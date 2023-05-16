@@ -26,7 +26,7 @@ function AvatarCreator() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // navigateTo(-1);
+    navigateTo(-1);
     // let image;
 
     axios
@@ -74,7 +74,7 @@ function AvatarCreator() {
         <form id="container1" onSubmit={handleSubmit}>
           <div className="box-1">
             <h2>Please Fill out the form below: </h2>
-            <span>
+            <span className="innerFlex">
               {/* <label>Name:</label> */}
               <input
                 placeholder="Name"
@@ -92,7 +92,7 @@ function AvatarCreator() {
                 onChange={(event) => setLastName(event.target.value)}
               />
             </span>
-            <span>
+            <span className="innerFlex">
               {/* <label>Email</label> */}
               <input
                 placeholder="Email"
