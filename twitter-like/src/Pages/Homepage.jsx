@@ -32,15 +32,6 @@ function Homepage() {
       )}
       <div id="main">
         <div id="left-container">
-          <form id="search-form" role="search">
-            <input
-              id="q"
-              aria-label="Search contacts"
-              placeholder="Search"
-              type="search"
-              name="q"
-            />
-          </form>
           {<DisplayAvatar />}
           <form method="post">
             <Link to={"/avatar-creator"}>
