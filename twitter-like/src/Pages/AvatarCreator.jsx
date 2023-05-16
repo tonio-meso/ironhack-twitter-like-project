@@ -67,22 +67,29 @@ function AvatarCreator() {
 
   return (
     <div>
-      <h1>Create Your Avatar</h1>
+      <header>
+        <h1>Create Your Avatar</h1>
+      </header>
       <form id="container1" onSubmit={handleSubmit}>
-        <label>Name:</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <label>Last Name:</label>
-        <input
-          type="text"
-          value={lastName}
-          onChange={(event) => setLastName(event.target.value)}
-        />
+        <span>
+          <label>Name:</label>
+          <input
+            className="field name"
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />{" "}
+          <label>Last Name:</label>
+          <input
+            className="field lastName"
+            type="text"
+            value={lastName}
+            onChange={(event) => setLastName(event.target.value)}
+          />
+        </span>
         <label>Nickname:</label>
         <input
+          className="field nickName"
           type="text"
           value={nickName}
           onChange={(event) => {
@@ -91,15 +98,16 @@ function AvatarCreator() {
         />
         <label>Email</label>
         <input
+          className="field email"
           type="text"
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);
           }}
         />
-
         <label>Password</label>
         <input
+          className="field password"
           type="text"
           value={password}
           onChange={(event) => {
@@ -310,6 +318,7 @@ function AvatarCreator() {
         /> */}
         <label>Description:</label>
         <textarea
+          className="field description"
           type="textbox"
           value={description}
           onChange={(event) => setDescription(event.target.value)}
