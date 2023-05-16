@@ -1,4 +1,5 @@
 import React from "react";
+import "./DescriptionPage.css";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -90,14 +91,20 @@ function DescriptionPage() {
   }
 
   return (
-    <>
-      <div>
+    <div>
+      <div className="header-1">
         <h1>Your Profile</h1>
       </div>
-      <div>
+      <div className="Tub">
         {userId && (
           <div>
+            <h3>{userId.name}</h3>
+            <h3>{userId.lastName}</h3>
+            <h3>{userId.nickName}</h3>
+            <h3>{userId.description}</h3>
+            <h3>{userId.message}</h3>
             <img
+              className="avatar-img2"
               src={
                 userId.image +
                 `${face}` +
@@ -107,11 +114,6 @@ function DescriptionPage() {
                 `${skin}`
               }
             />
-            <h3>{userId.name}</h3>
-            <h3>{userId.lastName}</h3>
-            <h3>{userId.nickName}</h3>
-            <h3>{userId.description}</h3>
-            <h3>{userId.message}</h3>
           </div>
         )}
         <form onSubmit={handleSubmit}>
@@ -309,7 +311,7 @@ function DescriptionPage() {
         </form>
       </div>
       <Link to={"/"}>Back</Link>
-    </>
+    </div>
   );
 }
 
