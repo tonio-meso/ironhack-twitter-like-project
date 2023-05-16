@@ -19,6 +19,8 @@ function Tweeting() {
       .all([axios.get(apiUrlAvatar), axios.get(apiUrlTweet)])
       .then(
         axios.spread((avatarResponse, tweetResponse) => {
+          console.log("Avatar Response:", avatarResponse.data);
+          console.log("Tweet Response:", tweetResponse.data);
           const avatars = avatarResponse.data;
           const tweets = tweetResponse.data;
 
@@ -37,6 +39,7 @@ function Tweeting() {
           });
 
           setData(mergedData);
+          console.log("mergedData:", mergedData);
         })
       )
       .catch((error) => {
@@ -92,6 +95,7 @@ function Tweeting() {
                   <div>
                     <span className="username">{item.nickName}</span>
                     <div className="description">{item.message}</div>
+                    <div className="timestamp">{item.timestamp}</div>
                   </div>
                 )}
               </li>
