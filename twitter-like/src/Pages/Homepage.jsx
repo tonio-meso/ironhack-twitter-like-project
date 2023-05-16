@@ -18,12 +18,18 @@ function Homepage() {
 
   return (
     <>
-      <header>
+      <header className="homepage-header">
         Like Twitter but Better
         <button id="login" onClick={handleLogin}>
           Login
         </button>
       </header>
+      {/* Antoine : now with this part we know if the dialog is open or not */}
+      {isDialogOpen && (
+        <div className="loginPage">
+          <LoginPage onClose={closeDialog} />
+        </div>
+      )}
       <div id="main">
         <div id="left-container">
           <form id="search-form" role="search">
@@ -45,12 +51,6 @@ function Homepage() {
         <div id="right-container">{<Tweeting />}</div>
       </div>
       <footer>@Toheeb Antoine 2023</footer>
-      {/* Antoine : now with this part we know if the dialog is open or not */}
-      {isDialogOpen && (
-        <div className="loginPage">
-          <LoginPage onClose={closeDialog} />
-        </div>
-      )}
     </>
   );
 }
