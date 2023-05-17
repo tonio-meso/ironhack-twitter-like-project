@@ -1,0 +1,58 @@
+[
+  {
+    "nickName": "LaughingLlama",
+    "email": "llama@example.com",
+    "password": "Haha123!",
+    "image": "https://api.dicebear.com/6.x/open-peeps/svg?seed=LaughingLlama",
+    "message": "Why did the llama bring a ruler to bed? To measure how long he slept!",
+    "description": "Full-time comedian and part-time llama enthusiast."
+  },
+  {
+    "nickName": "SillySausage",
+    "email": "sausage@example.com",
+    "password": "FunnyFood456",
+    "image": "https://api.dicebear.com/6.x/open-peeps/svg?seed=SillySausage",
+    "message": "Why did the sausage go to school? To get smarter and become a witty Wiener!",
+    "description": "Dedicated to spreading laughter, one sausage joke at a time."
+  },
+  {
+    "nickName": "JokerFish",
+    "email": "joker@example.com",
+    "password": "FishyLaughs789",
+    "image": "https://api.dicebear.com/6.x/open-peeps/svg?seed=JokerFish",
+    "message": "Why did the fish tell jokes? Because it had a great sense of humor and wanted to make a splash!",
+    "description": "Master of underwater stand-up comedy, making waves with hilarious punchlines."
+  },
+  {
+    "nickName": "CrazyBanana",
+    "email": "banana@example.com",
+    "password": "BananasRule321",
+    "image": "https://api.dicebear.com/6.x/open-peeps/svg?seed=CrazyBanana",
+    "message": "What did one banana say to the other? 'You're a-peeling!'",
+    "description": "Living life with a peel of laughter, bananas are my muse."
+  },
+  {
+    "nickName": "GigglingGiraffe",
+    "email": "giraffe@example.com",
+    "password": "TallLaughs123",
+    "image": "https://api.dicebear.com/6.x/open-peeps/svg?seed=GigglingGiraffe",
+    "message": "Why don't giraffes use social media? They prefer to stick their necks out in person!",
+    "description": "Spreading laughter from the tallest heights, one long-necked joke at a time."
+  },
+  {
+    "nickName": "CheekyMonkey",
+    "email": "monkey@example.com",
+    "password": "BananaLaughs456",
+    "image": "https://api.dicebear.com/6.x/open-peeps/svg?seed=CheekyMonkey",
+    "message": "Why did the monkey like the banana? Because it found it a-peeling!",
+    "description": "Bringing joy and mischief with every playful swing through the trees."
+  },
+  {
+    "nickName": "WittyWalrus",
+    "email": "walrus@example.com",
+    "password": "FishyPuns789",
+    "image": "https://api.dicebear.com/6.x/open-peeps/svg?seed=WittyWalrus",
+    "message": "Why don't walruses ever play cards? They're always at the bottom of the deck!",
+    "description": "Ocean's resident comedian, making marine life chuckle with his clever wordplay."
+  }
+]
