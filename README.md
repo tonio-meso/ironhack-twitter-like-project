@@ -12,20 +12,17 @@ development of a web application (twitter like) using react.js
   home page, creator page, description page
   build the navigation :
   router skeleton in html of home page
-
-  - implement use of <Outlet/>
   - lync to avatar detail --> creator page
   - lync to create your avatar page
-
 - Iteration 2
 - Iteration 3
 - Iteration 4
 
 # MVP
 
-My MVP should look like this
+Our MVP should looks like this
 
-Initial plan to reach the MVP
+<img src="./twitter-like/twitter-app.png" style="width : 80%">
 
 # Iteration-1
 
@@ -51,13 +48,23 @@ installation of the environment for the twitter like project
 
 # Description of the components
 
-# Logic
+- HomePage --> on this page we display on the left all the avatar, and on the right there is a message box to tweet
+- DisplayAvatar --> from the endpoint https://ironrest.fly.dev/api/avatar-collection" this is component gonna display the all avatar and allow to use a searchbar to filter
+- loginPage --> on this part we first call the an endpoitn to get all information from the users and compare with the email and the password of the user (bad practices in fact whe should handle it from the backend) we then store \_id int the local storage and close the page to return to the Homepage
+  -Tweeting --> we call two endpoint of the api, to merge the data from the avatar before tweeting
+- AvatarCreator
+- DescriptionPage
 
 # Technical challenges
+
+manage the login feature without a backend to manage the credential of the users
+We find a way using local storage to manage it
 
 # Big mistake
 
 # Demo
+
+https://iron-twitter.netlify.app/
 
 # Feature slide
 
