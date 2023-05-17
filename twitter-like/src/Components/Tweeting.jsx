@@ -14,6 +14,7 @@ function Tweeting() {
     getAllData();
   }, []);
 
+  // here we gonna merge the information from the two endpoint in order to publish a user's message
   const getAllData = () => {
     axios
       .all([axios.get(apiUrlAvatar), axios.get(apiUrlTweet)])
@@ -47,10 +48,11 @@ function Tweeting() {
       });
   };
 
+  // trig the function when a user submit a message
   const handlePromptSubmit = () => {
     const userId = localStorage.getItem("userId");
 
-    // check if userId
+    // check if userId is present in the localstorage
     if (userId) {
       const date = new Date();
       const options = {
