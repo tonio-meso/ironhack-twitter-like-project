@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { sleep } from "./utils.js";
 const apiUrl = "https://ironrest.fly.dev/api/avatar-collection";
 
 // doing an asychronous function
@@ -12,10 +12,13 @@ const deleteAllItems = async () => {
     // iterate for each item
     for (const item of items) {
       await axios.delete(`${apiUrl}/${item._id}`);
+      console.log("We deleted: ", item._id);
+      await sleep(500);
     }
     console.log("All items deleted successfully");
   } catch (error) {
     console.error("Error deleting items:", error);
+    // hello
   }
 };
 
