@@ -32,7 +32,7 @@ function Homepage() {
       )}
       <div id="main">
         <div id="left-container">
-          {<DisplayAvatar />}
+          <DisplayAvatar />
           <form method="post">
             <Link to={"/avatar-creator"}>
               <button type="submit">New Avatar</button>

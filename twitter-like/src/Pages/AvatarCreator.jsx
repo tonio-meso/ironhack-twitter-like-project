@@ -26,7 +26,6 @@ function AvatarCreator() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    navigateTo(-1);
     // let image;
 
     axios
@@ -59,7 +58,9 @@ function AvatarCreator() {
 
     axios
       .post(floApi, userObject)
-      .then((response) => {})
+      .then((response) => {
+        navigateTo("/");
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -148,9 +149,7 @@ function AvatarCreator() {
               value={description}
               onChange={(event) => setDescription(event.target.value)}
             />
-            <button type="submit" className="sendB">
-              Send
-            </button>
+            <button type="submit">Send</button>
           </div>
         </form>
         <Link to={"/"}>Back</Link>
