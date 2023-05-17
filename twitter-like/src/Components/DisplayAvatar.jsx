@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 const apiUrl = "https://ironrest.fly.dev/api/avatar-collection";
 
 const DisplayAvatar = () => {
+  //useState hook to define two state variables: data and searchQuery.
+  //data represents the array of avatar data, and setData is used to update its value.
+  //searchQuery represents the search input value, and setSearchQuery is used to update it.
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -23,11 +26,15 @@ const DisplayAvatar = () => {
         console.log(error);
       });
   };
-
+  //triggered when the search input value changes.
+  //It updates the searchQuery state variable with the new value.
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
   };
 
+  // This block of code filters the data array based on the searchQuery.
+  //It checks if either the nickName or description of each item includes the searchQuery (case-insensitive).
+  //The filtered items are stored in the filteredData array.
   const filteredData = data.filter((item) => {
     const { nickName, description } = item;
     const lowerCaseQuery = searchQuery.toLowerCase();
