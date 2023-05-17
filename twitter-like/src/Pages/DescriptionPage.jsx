@@ -16,6 +16,7 @@ function DescriptionPage() {
   const [skin, setSkin] = useState("");
   const [clothColor, setClothColor] = useState("");
   const [hair, setHair] = useState("");
+  const [facialHair, setFacialHair] = useState("");
   const params = useParams();
   const navigateTo = useNavigate();
 
@@ -58,6 +59,7 @@ function DescriptionPage() {
         userId.image +
           `${face}` +
           `${hair}` +
+          `${facialHair}` +
           `${accessories}` +
           `${clothColor}` +
           `${skin}`
@@ -77,6 +79,7 @@ function DescriptionPage() {
           userId.image +
           `${face}` +
           `${hair}` +
+          `${facialHair}` +
           `${accessories}` +
           `${clothColor}` +
           `${skin}`,
@@ -109,6 +112,7 @@ function DescriptionPage() {
                 userId.image +
                 `${face}` +
                 `${hair}` +
+                `${facialHair}` +
                 `${accessories}` +
                 `${clothColor}` +
                 `${skin}`
@@ -141,6 +145,9 @@ function DescriptionPage() {
               <option value="glasses3">Glasses3</option>
               <option value="glasses4">Glasses4</option>
               <option value="glasses5">Glasses5</option>
+              <option value="eyepatch">Eyepatch</option>
+              <option value="sunglasses">Shades</option>
+              <option value="sunglasses2">Shades 2</option>
             </select>
           </label>
           <label>
@@ -251,6 +258,42 @@ function DescriptionPage() {
               <option value="turban">Turban</option>
               <option value="twists">Twists</option>
               <option value="twists2">Twists 2</option>
+            </select>
+          </label>
+
+          <label>
+            Facial Hair:
+            <select
+              name="facialHairList"
+              defaultValue={facialHair}
+              onChange={(event) => {
+                if (event.target.value === "") {
+                  setFacialHair("");
+                } else {
+                  setFacialHair(
+                    "&facialHairProbability=100&facialHair=" +
+                      event.target.value
+                  );
+                }
+              }}
+            >
+              <option value="">None</option>
+              <option value="chin">Chin</option>
+              <option value="full">Full Beard</option>
+              <option value="full2">Full Beard #2</option>
+              <option value="full3">Full Beard #3</option>
+              <option value="full4">Full Beard #4</option>
+              <option value="goatee1">Goatee</option>
+              <option value="goatee2">Goatee #2</option>
+              <option value="moustache1">Moustache</option>
+              <option value="moustache2">Moustache #2</option>
+              <option value="moustache3">Moustache #3</option>
+              <option value="moustache4">Moustache #4</option>
+              <option value="moustache5">Moustache #5</option>
+              <option value="moustache6">Moustache #6</option>
+              <option value="moustache7">Moustache #7</option>
+              <option value="moustache8">Moustache #8</option>
+              <option value="moustache9">Moustache #9</option>
             </select>
           </label>
 
