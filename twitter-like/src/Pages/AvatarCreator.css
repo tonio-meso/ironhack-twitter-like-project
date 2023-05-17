@@ -76,4 +76,11 @@ img {
     flex-direction: column;
     align-items: center;
   }
+
+  .avatar-img1 {
+    height: 200px;
+    border-radius: 30%;
+    width: auto;
+    margin-top: 20px;
+  }
 }
