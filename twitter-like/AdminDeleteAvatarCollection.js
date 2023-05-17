@@ -18,6 +18,7 @@ const deleteAllItems = async () => {
     console.log("All items deleted successfully");
   } catch (error) {
     console.error("Error deleting items:", error);
+    // hello
   }
 };
 
